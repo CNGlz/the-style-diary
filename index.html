@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta
+      name="author"
+      content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
+    />
+    <meta name="generator" content="Astro v5.13.2" />
+    <title>The Style Diary | Celia</title>
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/5.3/examples/blog/"
+    />
+    <script src="assets/js/color-modes.js"></script>
+    <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <meta name="theme-color" content="#712cf9" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="blog.css" rel="stylesheet" />
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: #0000001a;
+        border: solid rgba(0, 0, 0, 0.15);
+        border-width: 1px 0;
+        box-shadow:
+          inset 0 0.5em 1.5em #0000001a,
+          inset 0 0.125em 0.5em #00000026;
+      }
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+      .bi {
+        vertical-align: -0.125em;
+        fill: currentColor;
+      }
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+      .bd-mode-toggle .bi {
+        width: 1em;
+        height: 1em;
+      }
+      .bd-mode-toggle .dropdown-menu .active .bi {
+        display: block !important;
+      }
+    </style>
+  </head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path
+          d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"
+        ></path>
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path
+          d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+        ></path>
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path
+          d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"
+        ></path>
+        <path
+          d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"
+        ></path>
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path
+          d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"
+        ></path>
+      </symbol>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol
+        id="aperture"
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+      >
+        <circle cx="12" cy="12" r="10"></circle>
+        <path
+          d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"
+        ></path>
+      </symbol>
+      <symbol id="cart" viewBox="0 0 16 16">
+        <path
+          d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+        ></path>
+      </symbol>
+      <symbol id="chevron-right" viewBox="0 0 16 16">
+        <path
+          fill-rule="evenodd"
+          d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+        ></path>
+      </symbol>
+    </svg>
+    <div class="container">
+      <header class="border-bottom lh-1 py-3">
+        <div class="row flex-nowrap justify-content-between align-items-center">
+          <div class="col-4 pt-1"></div>
+          <div class="col-4 text-center">
+            <a
+              class="blog-header-logo text-body-emphasis text-decoration-none"
+              href="#"
+              >The Style Diary</a
+            >
+          </div>
+          <div class="col-4 d-flex justify-content-end align-items-center"></div>
+        </div>
+      </header>
+    </div>
+    <div class="nav-scroller py-1 mb-3 border-bottom sticky-top">
+      <nav class="nav nav-underline justify-content-center gap-5 px-4">
+        <a class="nav-item nav-link link-body-emphasis" href="#home">
+          Home
+        </a>
+        <a class="nav-item nav-link link-body-emphasis" href="#winter-fashion">
+          Winter Fashion
+        </a>
+        <a class="nav-item nav-link link-body-emphasis" href="#color-combos">
+          Color Combos
+        </a>
+        <a class="nav-item nav-link link-body-emphasis" href="#moodboard">
+          Moodboard
+        </a>
+        <a class="nav-item nav-link link-body-emphasis" href="#about">
+          About Me
+        </a>
+      </nav>
+    </div>
+    <main class="container">
+      <div id="home" class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary d-lg-flex align-items-center justify-content-between gap-4">
+        <div class="col-lg-7 px-0">
+          <h1 class="display-4 fst-italic">
+            Welcome to My Little Style Diary
+          </h1>
+          <p class="lead my-3">
+            Welcome to my little corner of the internet! 
+            I'm Celia, and this is where I share my favorite fashion trends, 
+            unexpected color combinations, seasonal outfit inspiration, 
+            and everything I personally find stylish.
+          </p>
+        </div>
+        <img
+          src="images/deer-img.JPG"
+          alt="Vintage deer illustration"
+          class="img-fluid"
+          style="width: 220px; max-height: 280px; object-fit: contain;"
+        >
+      </div>
+      <div class="row mb-2">
+        <div class="col-md-6" id="winter-fashion">
+          <div
+            class="card row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+            style="background-color: #FFF0F5;"
+          >
+            <div class="col p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 text-primary-emphasis"
+                >Winter Fashion</strong
+              >
+              <h3 class="mb-0">Winter Outfit Inspiration</h3>
+              <div class="mb-1 text-body-secondary">Nov 12</div>
+              <p class="card-text mb-auto">
+                Cozy layers, chunky knits, warm accessories, and a little early 2010s nostalgia. Here's some winter outfit 
+                inspiration for staying cute when it's cold outside!
+              </p>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+              <img
+                src="images/winter-outfit.jpg"
+                alt="Winter outfit collage featuring cozy sweaters, boots, and accessories"
+                class="img-fluid"
+                style="width: 200px; height: 250px; object-fit: cover;"
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6" id="color-combos">
+          <div
+            class="card row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+            style="background-color: #FFF0F5;"
+          >
+            <div class="col p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 text-success-emphasis"
+                >Style Tips</strong
+              >
+              <h3 class="mb-0">Color Combos I'm Loving</h3>
+              <div class="mb-1 text-body-secondary">Nov 11</div>
+              <p class="mb-auto">
+                Forget the usual color rules! From unexpected pastels to bold combinations, I'm sharing my favorite 
+                color pairings and how I'd style them.
+              </p>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+              <img
+                src="images/color-palette.JPG"
+                alt="Pink and navy blue fashion outfit collage"
+                class="img-fluid"
+                style="width: 200px; height: 250px; object-fit: cover;"
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <section id="moodboard" class="fashion-gallery mb-5">
+        <h2 class="fst-italic text-center mb-4">
+          My Fashion Moodboard ♡
+        </h2>
+        <div class="row g-3">
+        <div class="col-md-4">
+          <img
+            src="images/color-combos.JPG"
+            alt="Pink and blue winter fashion outfit inspiration collage"
+            class="img-fluid rounded shadow-sm w-100"
+            style="height: 350px; object-fit: contain; background-color: white;"
+          >
+        </div>
+        <div class="col-md-4">
+          <img
+            src="images/color-combos-2.JPG"
+            alt="Mint and burgundy winter fashion outfit inspiration collage"
+            class="img-fluid rounded shadow-sm w-100"
+            style="height: 350px; object-fit: contain; background-color: white;"
+          >
+        </div>
+        <div class="col-md-4">
+          <img
+            src="images/color-combos-3.JPG"
+            alt="Green and grey winter fashion outfit inspiration collage"
+            class="img-fluid rounded shadow-sm w-100"
+            style="height: 350px; object-fit: contain; background-color: white;"
+          >
+        </div>
+        <div class="col-md-4">
+          <img
+            src="images/color-combos-4.JPG"
+            alt="Teal and magenta winter fashion outfit inspiration collage"
+            class="img-fluid rounded shadow-sm w-100"
+            style="height: 350px; object-fit: contain; background-color: white;"
+          >
+        </div>
+        <div class="col-md-4">
+          <img
+            src="images/color-combos-5.JPG"
+            alt="Orange and blue winter fashion outfit inspiration collage"
+            class="img-fluid rounded shadow-sm w-100"
+            style="height: 350px; object-fit: contain; background-color: white;"
+          >
+        </div>
+        <div class="col-md-4">
+          <img
+            src="images/color-combos-6.JPG"
+            alt="Coffee and blue winter fashion outfit inspiration collage"
+            class="img-fluid rounded shadow-sm w-100"
+            style="height: 350px; object-fit: contain; background-color: white;"
+          >
+        </div>
+      </div>
+      </section>
+      <div class="row g-5">
+        <div class="col-md-8">
+          <h3 class="pb-4 mb-4 fst-italic border-bottom">Dear Style Diary...</h3>
+          <article class="blog-post">
+            <h2 class="display-5 link-body-emphasis mb-1">My Winter Fashion Favorites</h2>
+            <p class="blog-post-meta">
+              October 25, 2026 by <a href="#">Celia</a>
+            </p>
+            <p>
+              Winter fashion is one of my favorite things to experiment with!
+              I love oversized sweaters, cozy scarves, cute boots, and layering
+              different textures. Lately, I've been especially drawn to
+              mixing neutral basics with unexpected pops of color.
+            </p>
+            <hr />
+            <p>
+              One of my favorite winter looks is pairing a chunky knit sweater
+              with wide-leg jeans and a statement coat. I also love adding
+              accessories like earmuffs, scarves, and a cute handbag.
+              It's all about staying warm without sacrificing personal style!
+            </p>
+            <h2>My Little Style Philosophy</h2>
+            <p>
+              My favorite thing about fashion is that there are no rules!
+            </p>
+            <blockquote class="blockquote">
+              <p>
+                Wear what makes you happy, mix unexpected colors,
+                and never be afraid to experiment with your personal style.
+              </p>
+            </blockquote>
+            <p>
+              I think the best outfits are the ones that feel effortless
+              but still have a little personality. Whether it's mixing
+              different textures, playing with colors, or adding a fun
+              accessory, the smallest details can make an outfit special.
+              That's what makes getting dressed so much fun!
+            </p>
+            <h3>My Winter Wardrobe Essentials</h3>
+            <p>
+              These are a few of my favorite pieces to have in my
+              wardrobe when the weather gets colder:
+            </p>
+            <ul>
+              <li>Oversized sweaters and chunky knits</li>
+              <li>Statement coats and cozy scarves</li>
+              <li>Middi-skirts and cute winter boots</li>
+            </ul>
+            <p>My favorite ways to style a winter outfit:</p>
+            <ol>
+              <li>Start with a cozy sweater or a cute layering piece.</li>
+              <li>Add a statement coat or an unexpected color combination.</li>
+              <li>Finish with fun accessories like scarves, boots, or a handbag.</li>
+            </ol>
+            <p>A few fashion terms I love:</p>
+            <dl>
+              <dt>Layering</dt>
+              <dd>
+                Combining different clothing pieces to create
+                an outfit with texture, depth, and personality.
+              </dd>
+
+              <dt>Statement Piece</dt>
+              <dd>
+                An eye-catching item, like a colorful coat or
+                unique handbag, that makes an outfit stand out.
+              </dd>
+
+              <dt>Color Blocking</dt>
+              <dd>
+                Pairing contrasting colors together to create
+                a bold and playful look.
+              </dd>
+            </dl>
+            <h2>Little Details, Big Difference</h2>
+            <p>
+              Sometimes it's the smallest details that make an outfit
+              feel complete. A cute handbag, colorful scarf, layered
+              jewelry, or even an unexpected pair of shoes can turn
+              a simple outfit into something special.
+            </p>
+          </article>
+        </div>
+        <div class="col-md-4" id="about">
+          <div style="position: static;">
+            <div class="p-4 mb-3 bg-body-tertiary rounded">
+              <h4 class="fst-italic">About Me</h4>
+              <p class="mb-0">
+                Hi, I'm Celia! Welcome to my little fashion diary,
+                where I share outfit inspiration, unexpected color
+                combinations, and all the things I find stylish.
+              </p>
+            </div>
+            <div class="about-gallery">
+              <img src="images/gflower-img.JPG" alt="Vintage floral illustration">
+              <img src="images/girl-horses-img.JPG" alt="Girl and horses illustration">
+              <img src="images/pink-flower-img.JPG" alt="Pink flower illustration">
+              </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="py-5 text-center text-body-secondary bg-body-tertiary">
+     <p>Made with love ♡ | The Style Diary © 2026</p>
+      <p class="mb-0"><a href="#">Back to top</a></p>
+    </footer>
+    <script
+      src="assets/dist/js/bootstrap.bundle.min.js"
+      class="astro-vvvwv3sm"
+    ></script>
+  </body>
+</html>

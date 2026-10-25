@@ -1,0 +1,224 @@
+/* stylelint-disable @stylistic/selector-list-comma-newline-after */
+
+.blog-header-logo {
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif/*rtl:Amiri, Georgia, "Times New Roman", serif*/;
+  font-size: 2.25rem;
+}
+
+.blog-header-logo:hover {
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif/*rtl:Amiri, Georgia, "Times New Roman", serif*/;
+}
+
+.flex-auto {
+  flex: 0 0 auto;
+}
+
+.h-250 { height: 250px; }
+@media (min-width: 768px) {
+  .h-md-250 { height: 250px; }
+}
+
+/* Pagination */
+.blog-pagination {
+  margin-bottom: 4rem;
+}
+
+/*
+ * Blog posts
+ */
+.blog-post {
+  margin-bottom: 4rem;
+}
+.blog-post-meta {
+  margin-bottom: 1.25rem;
+  color: #727272;
+}
+
+/* The Style Diary - Custom Colors */
+body {
+  background-color: #FFF0F5;
+  background-image: url("images/white-flower-bkg.JPG");
+  background-repeat: repeat;
+  background-size: 450px auto;
+}
+
+/* Pastel welcome section */
+main .p-4.p-md-5 {
+    background-color: #EDE1F5 !important;
+    border: 2px solid #D9BFE8;
+    border-radius: 15px;
+}
+
+/* Soft scrapbook paper behind blog content */
+.blog-post {
+  background-color: rgba(255, 240, 245, 0.96);
+  padding: 25px;
+  border-radius: 15px;
+  margin-bottom: 25px;
+}
+
+/* Soft background behind navigation links */
+.nav-scroller {
+  background-color: rgba(255, 240, 245, 0.97);
+  border-radius: 12px;
+  padding: 8px 12px;
+}
+
+/* Pink paper background for featured posts */
+.row.mb-2 > .col-md-6 > .card {
+  background-color: #FFF0F5 !important;
+  border: 1px solid #E9CFE3;
+  border-radius: 12px;
+}
+
+/* Fashion moodboard scrapbook panel */
+.fashion-gallery {
+  background-color: rgba(255, 240, 245, 0.96);
+  padding: 30px;
+  border-radius: 18px;
+  border: 2px solid #E9CFE3;
+}
+
+/* Scrapbook-style moodboard images */
+.fashion-gallery img {
+  border: 10px solid white;
+  transition: transform 0.3s ease;
+}
+
+.fashion-gallery .col-md-4:nth-child(1) img {
+  transform: rotate(-2deg);
+}
+
+.fashion-gallery .col-md-4:nth-child(2) img {
+  transform: rotate(2deg);
+}
+
+.fashion-gallery .col-md-4:nth-child(3) img {
+  transform: rotate(-2deg);
+}
+
+/* Straighten and enlarge scrapbook photos on hover */
+.fashion-gallery .col-md-4 img:hover {
+  transform: rotate(0deg) scale(1.04);
+}
+
+/* Keep navigation visible while scrolling */
+.nav-scroller {
+  position: sticky !important;
+  top: 0;
+  z-index: 1050;
+  background-color: #FFF0F5;
+}
+/* Smooth scrolling for navigation links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Leave space above sections when navigating */
+[id] {
+  scroll-margin-top: 180px;
+}
+
+/* Scrapbook washi tape navigation */
+.nav-scroller {
+  height: auto !important;
+  overflow: visible !important;
+}
+
+.nav-scroller .nav-link {
+  background-color: transparent;
+  background-image: url("images/pink-tab.png");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  border-radius: 0;
+  padding: 45px 30px;
+  margin: 0;
+  box-shadow: none;
+
+  transform: rotate(-2deg);
+  transition: transform 0.2s ease;
+}
+
+.nav-scroller .nav-link:nth-child(even) {
+  transform: rotate(2deg);
+}
+
+.nav-scroller .nav-link:hover {
+  background-color: transparent;
+  transform: rotate(0deg) translateY(-2px);
+}
+
+/* About Me scrapbook gallery */
+.about-gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  padding: 20px;
+}
+
+.about-gallery img {
+  width: 100%;
+  max-width: 260px;
+  height: 250px;
+  object-fit: contain;
+  background-color: white;
+  padding: 10px 10px 25px;
+  border: 1px solid #E8D5E0;
+  box-shadow: 3px 5px 10px rgba(100, 70, 90, 0.2);
+}
+
+.about-gallery img:nth-child(1) {
+  transform: rotate(-4deg);
+}
+
+.about-gallery img:nth-child(2) {
+  transform: rotate(3deg);
+}
+
+.about-gallery img:nth-child(3) {
+  transform: rotate(-2deg);
+}
+
+.nav-scroller {
+  background-color: #FFF0F5 !important;
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
+}
+
+/* Thin navigation strip without shrinking the tabs */
+.nav-scroller {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.nav-scroller .nav-link {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Space between navigation and welcome box */
+#home {
+  margin-top: 20px !important;
+}
+
+.nav-scroller nav {
+  align-items: center;
+}
+
+.nav-scroller {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.nav-scroller .nav-link {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
